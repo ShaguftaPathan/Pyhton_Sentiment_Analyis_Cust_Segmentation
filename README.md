@@ -29,13 +29,20 @@ The dataset consists of:
     o	compound: Aggregated score between -1 and +1
 
 # Custom Classification Logic
+Find out the polarity score for each Order.
+
+![](/Images_Sentiment/Polarity%20Score.png)
+
+Max Score 0.8047
+Min Score -0.6369
+
 We used the compound score from VADER to classify each review into five sentiment categories:
 * Positive: compound between 0.5164 and 0.8047
 * Mixed Positive: compound between 0.2281 and 0.5164
 * Neutral: compound between -0.0603 and 0.2281
 * Mixed Negative: compound between -0.3486 and -0.0603
 * Negative: compound less than -0.3486
-![](/Images_Sentiment/Polarity%20Score.png)
+
 ![](/Images_Sentiment/Reviews.png)
 
 This custom logic helps capture more detailed emotional tone.
