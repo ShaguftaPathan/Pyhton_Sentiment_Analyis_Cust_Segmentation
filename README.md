@@ -1,3 +1,5 @@
+# [Python (NLP) Project for Sentiment Analysis](https://shaguftapathan.github.io/Pyhton-NLP_Sentiment_Analysis/)
+
 NLP project that analyzes customer feedback and classifies sentiments into Positive, Negative, Neutral, and Mixed Sentiments using the VADER algorithm.
 
 Understanding customer feedback at scale is essential for improving products and services. Manual review of feedback is slow and subjective, so this project automates the process using a rule-based sentiment analyzer that is well-suited for short, informal text formats like:
@@ -30,7 +32,7 @@ The dataset consists of:
 # Custom Classification Logic
 Find out the polarity score for each Order.
 
-![](/Images_Sentiment/Polarity_Score.png)
+![](https://raw.githubusercontent.com/ShaguftaPathan/Pyhton-NLP_Sentiment_Analysis/main/Images_Sentiment/Polarity_Score.png)
 
 **Max Score 0.8047**
 **Min Score -0.6369**
