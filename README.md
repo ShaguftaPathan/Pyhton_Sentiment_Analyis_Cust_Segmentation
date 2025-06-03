@@ -68,7 +68,7 @@ Helps identify which sentiments are most common among customers
   * Helped prioritize operational improvements (e.g., delivery, support quality)
   * Enabled product teams to understand customer tone at a glance
 
-https://github.com/ShaguftaPathan/Pyhton-NLP-_Sentiment_Analysis/blob/main/Sentiment%20Analysis_CCTV.ipynb
+<a href="https://github.com/ShaguftaPathan/Pyhton-NLP_Sentiment_Analysis/blob/main/Sentiment%20Analysis_CCTV.ipynb">View Complete Jupyter Notebook</a>
 
 # Summary
 This project demonstrates the power of lightweight, rule-based models like VADER for rapid and interpretable sentiment classification. While not deep-learning based, its transparency and speed make it highly effective for short-form feedback analytics.
