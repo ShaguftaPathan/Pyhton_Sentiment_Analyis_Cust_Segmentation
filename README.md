@@ -30,7 +30,7 @@ The dataset consists of:
 # Custom Classification Logic
 Find out the polarity score for each Order.
 
-![](/Images_Sentiment/Polarity%20Score.png)
+![](/Images_Sentiment/Polarity_Score.png)
 
 **Max Score 0.8047**
 **Min Score -0.6369**
