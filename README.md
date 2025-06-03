@@ -33,6 +33,7 @@ Find out the polarity score for each Order.
 ![](/Images_Sentiment/Polarity%20Score.png)
 
 **Max Score 0.8047**
+
 **Min Score -0.6369**
 
 We used the compound score from VADER to classify each review into five sentiment categories:
