@@ -3,7 +3,7 @@
 
 <a href= "https://shaguftapathan.github.io/Pyhton_Sentiment_Analyis_Cust_Segmentation/">View Project</a>
 
-# <span style="color:#4a89c2; font-size:22px;"><b>Motivation</b></span>  
+# <span style="color:#4a89c2; font-size:26px;"><b>Motivation</b></span>  
 
 Understanding customer behavior is vital for any e-commerce business aiming to improve user experience, increase retention, and boost sales. While customer reviews provide emotional feedback, transactional data reveals behavioral patterns. This project combines both:
 
@@ -14,7 +14,7 @@ By integrating these perspectives, we deliver actionable insights for improving 
 
 ---
 
-# <span style="color:#4a89c2; font-size:22px;"><b>Dataset</b></span>  
+# <span style="color:#4a89c2; font-size:26px;"><b>Dataset</b></span>  
 
 The dataset is a blend of transactional and textual feedback, consisting of the following key features:
 
@@ -32,7 +32,7 @@ Time Period: Dec 2023 – May 2025
 
 ---
 
-# <span style="color:#4a89c2; font-size:22px;"><b>Project verview</b></span>  
+# <span style="color:#4a89c2; font-size:26px;"><b>Project verview</b></span>  
 
 We approached this analysis in two major parts:
 
@@ -46,9 +46,9 @@ Together, these methods offer a 360° view of customer behavior — what they fe
 
 ---
 
-<span style="color:#4a89c2; font-size:22px;"><b>Methodology</b></span>  
+# <span style="color:#4a89c2; font-size:26px;"><b>Methodology</b></span>  
 
-### Sentiment Analysis (VADER NLP)
+# <span style="color:#4a89c2; font-size:22px;">Sentiment Analysis (NLP-VADER)</b></span>  
 
 * Used `SentimentIntensityAnalyzer` from `nltk.sentiment.vader`
 * Extracted four sentiment scores
@@ -56,14 +56,14 @@ Together, these methods offer a 360° view of customer behavior — what they fe
 * Applied custom thresholds on compound score to classify reviews into:
 * Positive, Mixed Positive, Neutral, Mixed Negative, Negative
 
-#### Example
+## Example
 * "Nice product but delivery was delayed" → **Mixed Positive**
 * "Good features, poor customer service" → **Mixed Negative**
 
 ![](/Images_Sentiment/Reviews.png)
 
-#### Visualizations
-## Polarity distribution
+## Visualizations
+### Polarity distribution
 
 **Max Score 0.8047**  
 **Min Score -0.6369**
@@ -77,7 +77,7 @@ We used the compound score from VADER to classify each review into five sentimen
 
 ![](/Images_Sentiment/Polarity_Score.png)
 
-## Sentiment category bar chart
+### Sentiment category bar chart
 Bar Chart: Count of reviews in each sentiment category (Positive, Mixed Positive, Neutral, Mixed Negative, Negative).  
 Helps identify which sentiments are most common among customers
 
@@ -85,7 +85,7 @@ Helps identify which sentiments are most common among customers
 
 ---
 
-###  Customer Segmentation (RFM + K-Means)
+# <span style="color:#4a89c2; font-size:22px;">Customer Segmentaion (RFM + K-Means)</b></span>  
 ## Engineered RFM metrics:
 * **Recency**: Days since last purchase
 * **Frequency**: Count of orders
@@ -98,12 +98,12 @@ Helps identify which sentiments are most common among customers
 * Average Customers
 * Lapsed Customers
 
-#### Visualizations
-## RFM score
+## Visualizations
+### RFM score
 
 ![](/Images_Cust_Seg/RFM.png)  
 
-## Cluster distribution
+### Cluster distribution
  * Standardized RFM values using StandardScaler
  * Applied K-Means Clustering
  * Chose optimal k using Elbow Method and Silhouette Score  
@@ -111,7 +111,7 @@ Helps identify which sentiments are most common among customers
 ![](/Images_Cust_Seg/Clusters.png)
 ![](/Images_Cust_Seg/Status.png)  
 
-## Segment-wise count chart
+### Segment-wise count chart
  * Cluster distribution using Seaborn
  * Bar charts to interpret segments
  * Labeled clusters ("Top Customers", "Average Customers", "Lapsed Customers")  
@@ -120,7 +120,7 @@ Helps identify which sentiments are most common among customers
 
 ---
 
-# <span style="color:#4a89c2; font-size:22px;"><b>Tools & Libraries</b></span>  
+# <span style="color:#4a89c2; font-size:26px;"><b>Tools & Libraries</b></span>  
 
 | Sentiment Analysis            | Customer Segmentation         |
 |------------------------------|-------------------------------|
@@ -132,7 +132,7 @@ Helps identify which sentiments are most common among customers
 
 ---
 
-# <span style="color:#4a89c2; font-size:22px;"><b>Key Outcomes</b></span>  
+# <span style="color:#4a89c2; font-size:26px;"><b>Key Outcomes</b></span>  
 
 * Classified 4,356 reviews into 5 detailed sentiment categories using custom VADER logic
 * Identified major pain points in delivery and service through textual analysis
@@ -141,7 +141,7 @@ Helps identify which sentiments are most common among customers
 
 ---
 
-# <span style="color:#4a89c2; font-size:22px;"><b>Conclusion</b></span>  
+# <span style="color:#4a89c2; font-size:26px;"><b>Conclusion</b></span>  
 
 This combined project showcases how **textual feedback** and **purchase behavior** can be jointly analyzed to drive customer-centric decisions. The sentiment layer surfaces emotional trends, while RFM clustering uncovers structural segments in the customer base.
 
