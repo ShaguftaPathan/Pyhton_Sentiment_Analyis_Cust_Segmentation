@@ -1,7 +1,7 @@
 
 # Customer Behavior Analysis using Python (Sentiment Analysis + RFM Segmentation)
 
-<a>View Project</a>
+<a href= "https://shaguftapathan.github.io/Pyhton_Sentiment_Analyis_Cust_Segmentation/">View Project</a>
 
 # <span style="color:#4a89c2; font-size:22px;"><b>Motivation</b></span>  
 
@@ -63,7 +63,7 @@ Together, these methods offer a 360° view of customer behavior — what they fe
 ![](/Images_Sentiment/Reviews.png)
 
 #### Visualizations
-- Polarity distribution
+## Polarity distribution
 
 **Max Score 0.8047**  
 **Min Score -0.6369**
@@ -77,7 +77,7 @@ We used the compound score from VADER to classify each review into five sentimen
 
 ![](/Images_Sentiment/Polarity_Score.png)
 
-- Sentiment category bar chart
+## Sentiment category bar chart
 Bar Chart: Count of reviews in each sentiment category (Positive, Mixed Positive, Neutral, Mixed Negative, Negative).  
 Helps identify which sentiments are most common among customers
 
@@ -86,7 +86,7 @@ Helps identify which sentiments are most common among customers
 ---
 
 ###  Customer Segmentation (RFM + K-Means)
-* Engineered RFM metrics:
+## Engineered RFM metrics:
 * **Recency**: Days since last purchase
 * **Frequency**: Count of orders
 *  **Monetary**: Total spend
@@ -99,11 +99,11 @@ Helps identify which sentiments are most common among customers
 * Lapsed Customers
 
 #### Visualizations
-* RFM score
+## RFM score
 
 ![](/Images_Cust_Seg/RFM.png)  
 
-- Cluster distribution
+## Cluster distribution
  * Standardized RFM values using StandardScaler
  * Applied K-Means Clustering
  * Chose optimal k using Elbow Method and Silhouette Score  
@@ -111,7 +111,7 @@ Helps identify which sentiments are most common among customers
 ![](/Images_Cust_Seg/Clusters.png)
 ![](/Images_Cust_Seg/Status.png)  
 
-- Segment-wise count chart
+## Segment-wise count chart
  * Cluster distribution using Seaborn
  * Bar charts to interpret segments
  * Labeled clusters ("Top Customers", "Average Customers", "Lapsed Customers")  
