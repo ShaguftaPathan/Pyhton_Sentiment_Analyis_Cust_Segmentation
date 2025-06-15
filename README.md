@@ -1,40 +1,69 @@
-<a href="https://shaguftapathan.github.io/Pyhton-NLP_Sentiment_Analysis/">View Project</a>
 
-NLP project to analyze customer feedback for an e-Commerce client and classify sentiments into Positive, Negative, Neutral, and Mixed Sentiments using the VADER algorithm.
+# Customer Behavior Analysis using Python (Sentiment Analysis + RFM Segmentation)
 
-Understanding customer feedback at scale is essential for improving products and services. Manual review of feedback is slow and subjective, so this project automates the process using a rule-based sentiment analyzer that is well-suited for short, informal text formats like:
-* Product reviews
-* Survey responses
-* Social media comments
+<a>View Project</a>
 
-The goal is to quickly detect emotional tone, uncover problem areas, and enhance decision-making through data-driven insights.
+# <span style="color:#4a89c2; font-size:22px;"><b>Motivation</b></span>  
 
-<span style="color:#4a89c2; font-size:22px;"><b>Dataset</b></span>  
-The dataset consists of:
-  * Customer_ID  
-  * Order_ID  
-  * Order_Date  
-  * Deliver_Date  
-  * Customer_Review (Review Text)  
-  * Delivery_status  
-  * Shipping_Partner  
-  * City  
-  * State  
+Understanding customer behavior is vital for any e-commerce business aiming to improve user experience, increase retention, and boost sales. While customer reviews provide emotional feedback, transactional data reveals behavioral patterns. This project combines both:
+
+- **Sentiment Analysis** to assess customer emotions from reviews
+- **Customer Segmentation (RFM + K-Means)** to group customers based on purchasing behavior
+
+By integrating these perspectives, we deliver actionable insights for improving product offerings, delivery experience, and personalized marketing.
+
+---
+
+# <span style="color:#4a89c2; font-size:22px;"><b>Dataset</b></span>  
+
+The dataset is a blend of transactional and textual feedback, consisting of the following key features:
+
+* `Customer_ID`
+* `Order_ID`
+* `Order_Date`, `Delivery_Date`
+* `Customer_Review` (Review Text)
+*  `Delivery_Status`
+*  `Shipping_Partner`
+*  `City`, `State`
+*  `Quantity`, `Unit Price`, `Total`
+
+Source: Google Analytics API and customer review systems  
+Time Period: Dec 2023 – May 2025
+
+---
+
+# <span style="color:#4a89c2; font-size:22px;"><b>Project verview</b></span>  
+
+We approached this analysis in two major parts:
+
+1. **Sentiment Analysis with VADER**  
+   To automatically classify thousands of customer reviews into detailed emotional categories.
+
+2. **Customer Segmentation with RFM & K-Means**  
+   To profile customers based on their purchase recency, frequency, and monetary value.
+
+Together, these methods offer a 360° view of customer behavior — what they feel and how they act.
+
+---
 
 <span style="color:#4a89c2; font-size:22px;"><b>Methodology</b></span>  
 
-**VADER Sentiment Analysis**  
-  * Used SentimentIntensityAnalyzer from nltk.sentiment.vader  
-  * Extracted sentiment scores from Customer_Review(Review Text):  
-    o pos: Positive score  
-    o neu: Neutral score  
-    o neg: Negative score  
-    o compound: Aggregated score between -1 and +1  
+### Sentiment Analysis (VADER NLP)
 
-<span style="color:#4a89c2; font-size:22px;"><b>Custom Classification Logic</b></span>  
-Find out the polarity score for each Order.
+* Used `SentimentIntensityAnalyzer` from `nltk.sentiment.vader`
+* Extracted four sentiment scores
+* `pos` (positive), `neu` (neutral), `neg` (negative), `compound` (overall)
+* Applied custom thresholds on compound score to classify reviews into:
+* Positive, Mixed Positive, Neutral, Mixed Negative, Negative
 
-![](https://raw.githubusercontent.com/ShaguftaPathan/Pyhton-NLP_Sentiment_Analysis/main/Images_Sentiment/Polarity_Score.png)
+#### Example
+* "Nice product but delivery was delayed" → **Mixed Positive**
+* "Good features, poor customer service" → **Mixed Negative**
+
+![](/Images_Sentiment/Reviews.png)
+
+#### Visualizations
+- Polarity distribution
 
 **Max Score 0.8047**  
 **Min Score -0.6369**
@@ -44,34 +73,75 @@ We used the compound score from VADER to classify each review into five sentimen
 * Mixed Positive: compound between 0.2281 and 0.5164  
 * Neutral: compound between -0.0603 and 0.2281  
 * Mixed Negative: compound between -0.3486 and -0.0603  
-* Negative: compound less than -0.3486  
+* Negative: compound less than -0.3486
 
-![](/Images_Sentiment/Reviews.png)
+![](/Images_Sentiment/Polarity_Score.png)
 
-This custom logic helps capture more detailed emotional tone.  
-For example:  
-“Great product, but delivery was late.” → Mixed Positive  
-“Nice features, but poor customer service.” → Mixed Negative  
-
-<span style="color:#4a89c2; font-size:22px;"><b>Visualizations</b></span>  
+- Sentiment category bar chart
 Bar Chart: Count of reviews in each sentiment category (Positive, Mixed Positive, Neutral, Mixed Negative, Negative).  
-Helps identify which sentiments are most common among customers  
+Helps identify which sentiments are most common among customers
 
 ![](/Images_Sentiment/Chart.png)
 
-<span style="color:#4a89c2; font-size:22px;"><b>Tools & Libraries</b></span>  
-  * Python  
-  * NLTK – VADER sentiment analysis  
-  * Pandas – Data manipulation  
-  * Matplotlib / Seaborn - Visualization  
+---
 
-<span style="color:#4a89c2; font-size:22px;"><b>Key Outcomes</b></span>  
-  * Classified 4356 reviews into 5 custom sentiment buckets (Positive, Mixed Positive, Neutral, Mixed Negative, Negative)  
-  * Identified top drivers of negative and mixed feedback  
-  * Helped prioritize operational improvements (e.g., delivery, support quality)  
-  * Enabled product teams to understand customer tone at a glance  
+###  Customer Segmentation (RFM + K-Means)
+* Engineered RFM metrics:
+* **Recency**: Days since last purchase
+* **Frequency**: Count of orders
+*  **Monetary**: Total spend
+* Scored customers using quantiles
+* Standardized values and applied **K-Means Clustering**
+* Used Elbow Method and Silhouette Score to determine optimal `k`
+* Labeled segments:
+* Top Customers
+* Average Customers
+* Lapsed Customers
 
-<a href="https://github.com/ShaguftaPathan/Pyhton-NLP_Sentiment_Analysis/blob/main/Sentiment%20Analysis_CCTV.ipynb">View Complete Jupyter Notebook</a>
+#### Visualizations
+* RFM score
 
-<span style="color:#4a89c2; font-size:22px;"><b>Summary</b></span>  
-This project demonstrates the power of lightweight, rule-based models like VADER for rapid and interpretable sentiment classification. While not deep-learning based, its transparency and speed make it highly effective for short-form feedback analytics.
+![](/Images_Cust_Seg/RFM.png)  
+
+- Cluster distribution
+ * Standardized RFM values using StandardScaler
+ * Applied K-Means Clustering
+ * Chose optimal k using Elbow Method and Silhouette Score  
+
+![](/Images_Cust_Seg/Clusters.png)
+![](/Images_Cust_Seg/Status.png)  
+
+- Segment-wise count chart
+ * Cluster distribution using Seaborn
+ * Bar charts to interpret segments
+ * Labeled clusters ("Top Customers", "Average Customers", "Lapsed Customers")  
+
+![](/Images_Cust_Seg/Chart.png)  
+
+---
+
+# <span style="color:#4a89c2; font-size:22px;"><b>Tools & Libraries</b></span>  
+
+| Sentiment Analysis            | Customer Segmentation         |
+|------------------------------|-------------------------------|
+| Python                       | Python                        |
+| NLTK (VADER)                 | Pandas, NumPy                 |
+| Pandas                       | Scikit-learn (KMeans)         |
+| Matplotlib, Seaborn          | Matplotlib, Seaborn           |
+| Jupyter Notebook             | Jupyter Notebook              |
+
+---
+
+# <span style="color:#4a89c2; font-size:22px;"><b>Key Outcomes</b></span>  
+
+* Classified 4,356 reviews into 5 detailed sentiment categories using custom VADER logic
+* Identified major pain points in delivery and service through textual analysis
+* Segmented customers into high-, medium-, and low-value groups
+* Informed campaign strategies to re-engage lapsed customers and retain top spenders
+
+---
+
+# <span style="color:#4a89c2; font-size:22px;"><b>Conclusion</b></span>  
+
+This combined project showcases how **textual feedback** and **purchase behavior** can be jointly analyzed to drive customer-centric decisions. The sentiment layer surfaces emotional trends, while RFM clustering uncovers structural segments in the customer base.
+
