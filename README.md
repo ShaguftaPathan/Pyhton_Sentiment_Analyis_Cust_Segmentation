@@ -48,7 +48,7 @@ Together, these methods offer a 360° view of customer behavior — what they fe
 
 # <span style="color:#4a89c2; font-size:26px;"><b>Methodology</b></span>  
 
-# <span style="color:#4a89c2; font-size:22px;">Sentiment Analysis (NLP-VADER)</b></span>  
+# <span style="color:#4a89c2; font-size:22px;">Sentiment Analysis (NLP-VADER)</span>  
 
 * Used `SentimentIntensityAnalyzer` from `nltk.sentiment.vader`
 * Extracted four sentiment scores
